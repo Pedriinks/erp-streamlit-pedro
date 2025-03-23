@@ -9,9 +9,6 @@ receita = pd.read_sql_query("SELECT * FROM contas_receber", conn)
 
 despesas = pd.read_sql_query("SELECT * FROM contas_pagar", conn)
 
-#grafico so para testar se estava tudo certo com as queries
-grafico_pizza = px.pie(receita, names = "status", title = "Teste")
-
 grafico_barras = px.bar(receita, x = "status", y = "valor", title = "Receita x Despesa")
 
 st.plotly_chart(grafico_barras)
